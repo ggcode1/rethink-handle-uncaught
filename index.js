@@ -43,7 +43,7 @@ module.exports = function(r, opts) {
     };
 
     function handleUnhandledRejection(reason, promise) {
-        console.error((new Date).toUTCString() + ' unhandledPromiseRejection:', getStack(err))
+        console.error((new Date).toUTCString() + ' unhandledPromiseRejection:', getStack(reason))
         return insert(reason, true);
     };
 
