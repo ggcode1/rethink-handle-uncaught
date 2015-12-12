@@ -13,9 +13,14 @@ module.exports = function(r, opts) {
             date: new Date(),
             stack: errOrPromise.stack ? errOrPromise.stack : errOrPromise,
             argv: process.argv,
+            cwd: process.cwd(),
             memory: process.memoryUsage(),
             uptime: process.uptime(),
-            promise: isPromise
+            promise: isPromise,
+            uid: process.getuid(),
+            groups: process.getgroups(),
+            load: os.loadavg()
+
         }).run();
     }
 
