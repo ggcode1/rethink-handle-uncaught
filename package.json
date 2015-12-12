@@ -1,0 +1,25 @@
+{
+  "name": "rethink-handle-uncaught",
+  "version": "0.0.1",
+  "description": "Log uncaught exceptions and promise rejections into RethinkDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/llambda/rethink-handle-uncaught.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/llambda/rethink-handle-uncaught/issues"
+  },
+  "homepage": "https://github.com/llambda/rethink-handle-uncaught#readme",
+  "devDependencies": {
+    "bluebird": "^3.0.6",
+    "rethinkdbdash": "^2.2.10"
+  },
+  "peerDependencies": {
+    "rethinkdbdash": "^2.2.0"
+  }
+}
