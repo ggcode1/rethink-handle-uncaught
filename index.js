@@ -6,12 +6,22 @@ module.exports = function(r, opts) {
         table: 'errors'
     };
 
+    function getStack(errOrPromise) {
+        if (errOrPromise == null) {
+            return null;
+        } else if (errOrPromise.stack != null) {
+            return errOrPromise.stack;
+        } else {
+            return errOrPromise;
+        }
+    }
+
     function insert(errOrPromise, isPromise) {
         return r.table(opts.table).insert({
             host: os.hostname(),
             pid: process.pid,
             date: new Date(),
-            stack: errOrPromise.stack ? errOrPromise.stack : errOrPromise,
+            stack: getStack(errOrPromise),
             argv: process.argv,
             cwd: process.cwd(),
             memory: process.memoryUsage(),
@@ -25,7 +35,7 @@ module.exports = function(r, opts) {
     }
 
     function handleUncaughtException(err) {
-        console.error((new Date).toUTCString() + ' uncaughtException:', err.stack ? err.stack : err)
+        console.error((new Date).toUTCString() + ' uncaughtException:', getStack(err))
         return insert(err, false)
             .then(function() {
                 process.exit(1)
@@ -33,7 +43,7 @@ module.exports = function(r, opts) {
     };
 
     function handleUnhandledRejection(reason, promise) {
-        console.error((new Date).toUTCString() + ' unhandledPromiseRejection:', reason.stack)
+        console.error((new Date).toUTCString() + ' unhandledPromiseRejection:', getStack(err))
         return insert(reason, true);
     };
 
