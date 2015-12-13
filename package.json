@@ -17,7 +17,7 @@
   "homepage": "https://github.com/llambda/rethink-handle-uncaught#readme",
   "devDependencies": {
     "bluebird": "^3.0.6",
-    "rethinkdbdash": "^2.2.10"
+    "rethinkdbdash": "^2.2.11"
   },
   "peerDependencies": {
     "rethinkdbdash": "^2.2.0"
