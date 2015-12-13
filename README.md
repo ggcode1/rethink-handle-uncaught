@@ -1,5 +1,5 @@
 # rethink-handle-uncaught
-Log uncaught exceptions and promise rejections stacks into RethinkDB.
+Log uncaught exceptions, and promise rejections, into RethinkDB. Works with both Bluebird promises and the Promise implementation built-into Node. The default table is "errors". Stacks are logged if they are available.
 
 Suitable for production, as it also logs:
 
