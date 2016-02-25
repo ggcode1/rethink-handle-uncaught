@@ -1,6 +1,6 @@
 {
   "name": "rethink-handle-uncaught",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Log uncaught exceptions and promise rejections into RethinkDB",
   "main": "index.js",
   "scripts": {
@@ -25,8 +25,8 @@
   },
   "peerDependencies": {
     "rethinkdbdash": "^2.2.0"
-},
-"files": [
+  },
+  "files": [
     "index.js"
-]
+  ]
 }
