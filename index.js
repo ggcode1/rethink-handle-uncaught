@@ -31,13 +31,17 @@ module.exports = function(r, opts) {
             groups: process.getgroups(),
             load: os.loadavg()
 
-        }).run();
+        }).run()
+        .catch(function (err) {
+            // If the DB is unavailable, we would go in an infinite loop trying to keep inserting exceptions.
+            console.error(getStack(err));
+        })
     }
 
     function handleUncaughtException(err) {
         console.error((new Date).toUTCString() + ' uncaughtException:', getStack(err))
         return insert(err, false)
-            .then(function() {
+            .finally(function() {
                 process.exit(1)
             })
     };
