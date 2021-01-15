@@ -1,6 +1,6 @@
 {
   "name": "rethink-handle-uncaught",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Log uncaught exceptions and promise rejections into RethinkDB",
   "main": "index.js",
   "scripts": {
