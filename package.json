@@ -16,11 +16,11 @@
   },
   "homepage": "https://github.com/llambda/rethink-handle-uncaught#readme",
   "devDependencies": {
-    "bluebird": "^3.0.6",
+    "bluebird": "^3.7.2",
     "rethinkdbdash": "^2.2.11"
   },
   "peerDependencies": {
-    "rethinkdbdash": "^2.2.0"
+    "rethinkdbdash": "^2.3.31"
   },
   "files": [
     "index.js"
